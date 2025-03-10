@@ -5,6 +5,8 @@ public class CXNgoaiThanh extends ChuyenXe{
 	String noiDen;
 	float soNgayDi;
 	
+	
+	
 	//ô 3
 	CXNgoaiThanh() {
 		// TODO Auto-generated constructor stub
