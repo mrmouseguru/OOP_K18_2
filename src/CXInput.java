@@ -7,11 +7,13 @@ public class CXInput {
 	Scanner keyboard;
 	PrintWriter out;
 	CXStorage storage;
+	CXOutput cXOut;
 
 	CXInput() {
 		keyboard = new Scanner(System.in);
 		out = new PrintWriter(System.out);
 		storage = new CXStorage();
+		cXOut = new CXOutput();
 
 	}
 
@@ -29,6 +31,19 @@ public class CXInput {
 		//của chính nó
 		this(_keyboard, _out);
 		storage = _storage;
+
+	}
+	
+	CXInput(Scanner _keyboard, PrintWriter _out, 
+			CXStorage _storage, CXOutput _cXout) {
+		//keyboard = _keyboard;
+		//out = _out;
+		//gọi đến hàm khởi tạo 2 tham số 
+		//của chính nó
+		//this(_keyboard, _out);
+		//storage = _storage;
+		this(_keyboard, _out, _storage);
+		cXOut = _cXout;
 
 	}
 
@@ -85,6 +100,10 @@ public class CXInput {
 			cxNoi = new CXNoiThanh(maCX, hoTenTX, soXe, donGia, soTuyen, soKm);
 			//gửi thông điệp đến đối tượng CXStorage
 			storage.insertCXNoiThanh(cxNoi);
+			
+			//gửi thông điệp đến đối tượng
+			//CXOutput
+			cXOut.output(cxNoi);
 		}
 		
 		if(loaiCX == 2) {
@@ -100,6 +119,9 @@ public class CXInput {
 					noiDen, soNgayDi);
 			//gửi thông điệp
 			storage.insertCXNgoaiThanh(cxNgoai);
+			
+			//message to CXOutput
+			cXOut.output(cxNgoai);
 		}
 
 	}
