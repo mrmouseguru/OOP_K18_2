@@ -17,6 +17,6 @@ public class AppCX {
 		cxMenu.controlLoop();
 		
 
-	}
+	} 
 
 }

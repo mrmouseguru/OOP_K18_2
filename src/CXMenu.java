@@ -9,6 +9,7 @@ public class CXMenu {
 	String prompt;//lời nhắc
 	//bước 1
 	CXInput cxInput;
+	DSCXControl dsCXControl;
 	
 	//ô 3
 	CXMenu()
@@ -17,6 +18,7 @@ public class CXMenu {
 		keyboard = new Scanner(System.in);
 		prompt = "->";
 		cxInput = new CXInput();
+		dsCXControl = new DSCXControl();
 		
 	}
 	
@@ -63,11 +65,20 @@ public class CXMenu {
 				continue;
 			}
 			
+			if("PRINT".equalsIgnoreCase(command)) {
+				print();
+				continue;
+			}
+			
 			
 		}
 		
 	}
 	
+	private void print() {
+		dsCXControl.printDSCX();
+	}
+
 	void add() {
 		cxInput.input();
 		
